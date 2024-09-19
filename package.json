@@ -22,7 +22,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "format": "prettier --write .",
-     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
