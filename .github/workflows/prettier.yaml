@@ -1,4 +1,4 @@
-name: Prettier Format Check
+name: Prettier Format Check!
 
 on:
   pull_request:
@@ -11,6 +11,11 @@ on:
 jobs:
   prettier:
     runs-on: ubuntu-latest
+
+    permissions: 
+      contents: write
+      pull-requests: write
+      workflows: write  # Lägg till detta för att ge GitHub Actions rätt att uppdatera workflows
 
     steps:
       - name: Check out the repository
@@ -38,10 +43,6 @@ jobs:
 
       - name: Push changes back to the repository
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Använd GitHub token för att kunna pusha
-        # Pusha tillbaka till den ursprungliga branchen (inte PR-refsen)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: git push origin HEAD:${{ github.event.pull_request.head.ref }}
 
-permissions:
-  contents: write
-  pull-requests: write
