@@ -39,7 +39,8 @@ jobs:
       - name: Push changes back to the repository
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Använd GitHub token för att kunna pusha
-        run: git push origin HEAD:${{ github.ref }}
+        # Pusha tillbaka till den ursprungliga branchen (inte PR-refsen)
+        run: git push origin HEAD:${{ github.event.pull_request.head.ref }}
 
 permissions:
   contents: write
