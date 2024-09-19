@@ -38,5 +38,9 @@ jobs:
 
       - name: Push changes back to the repository
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Här använder vi GitHub token för att kunna pusha
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Använd GitHub token för att kunna pusha
         run: git push origin HEAD:${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
