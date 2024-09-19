@@ -15,11 +15,13 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Hämtar hela git-historiken för att möjliggöra pushes
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  
+          node-version: '18'  # Använd den Node.js-version du har i projektet
 
       - name: Install dependencies
         run: npm install
@@ -33,4 +35,6 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
           git commit -m "Auto-formatted code with Prettier" || echo "No changes to commit"
-          git push
+
+      - name: Push changes back to the repository
+        run: git push origin HEAD:${{ github.ref }}
