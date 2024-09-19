@@ -37,4 +37,6 @@ jobs:
           git commit -m "Auto-formatted code with Prettier" || echo "No changes to commit"
 
       - name: Push changes back to the repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Här använder vi GitHub token för att kunna pusha
         run: git push origin HEAD:${{ github.ref }}
