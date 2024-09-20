@@ -1,0 +1,4 @@
+FIREBASE_PROJECT_ID=netflix-dupe-942ea
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_HERE\n-----END PRIVATE KEY-----\n"
+FIREBASE_CLIENT_EMAIL=firebase-adminsdk-x3njx@netflix-dupe-942ea.iam.gserviceaccount.com
+FIREBASE_DATABASE_URL=https://netflix-dupe-942ea-default-rtdb.firebaseio.com
