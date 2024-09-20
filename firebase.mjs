@@ -1,6 +1,8 @@
 // firebase.js
-const admin = require("firebase-admin");
-require("dotenv").config();
+//Changed from require to import
+import admin from "firebase-admin";
+import dotenv from "dotenv";
+dotenv.config();
 
 const serviceAccount = {
   projectId: process.env.FIREBASE_PROJECT_ID,
@@ -14,4 +16,5 @@ admin.initializeApp({
 });
 
 const db = admin.database();
-module.exports = db;
+//changed from module.export to export
+export default db;
