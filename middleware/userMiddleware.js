@@ -1,5 +1,6 @@
 import admin from '../firebase.mjs';
 
+// Function for signup route
 export const signup = async (req, res) => {
   const { email, password } = req.body;
 
