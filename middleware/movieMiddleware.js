@@ -19,11 +19,9 @@ export const getAllMovies = (req, res) => {
     res.json(movies);
   });
 };
-<<<<<<< HEAD
-=======
 
 // Function for get trending movies
-export const getAllTrendingMovies = (req, res) => { 
+export const getAllTrendingMovies = (req, res) => {
   const filePath = path.join(__dirname, "..", "data", "movies.json");
 
   fs.readFile(filePath, "utf-8", (err, data) => {
@@ -34,9 +32,8 @@ export const getAllTrendingMovies = (req, res) => {
     const movies = JSON.parse(data);
 
     // Filter out the trending movies
-    const trendingMovies = movies.filter(movie => movie.isTrending);
+    const trendingMovies = movies.filter((movie) => movie.isTrending);
 
     res.json(trendingMovies);
   });
-}
->>>>>>> 36dd008 (Added trendingMovies route)
+};
