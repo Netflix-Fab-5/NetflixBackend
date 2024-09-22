@@ -8,6 +8,6 @@ const router = express.Router();
 
 // routes
 router.get("/", getAllMovies);
-router.get("/trending", getAllTrendingMovies)
+router.get("/trending", getAllTrendingMovies);
 
 export default router;
