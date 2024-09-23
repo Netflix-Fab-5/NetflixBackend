@@ -1,8 +1,13 @@
 import express from "express";
-import { getAllMovies } from "../middleware/movieMiddleware.js";
+import {
+  getAllMovies,
+  getAllTrendingMovies,
+} from "../middleware/movieMiddleware.js";
 
 const router = express.Router();
+
 // routes
 router.get("/", getAllMovies);
+router.get("/trending", getAllTrendingMovies);
 
 export default router;
